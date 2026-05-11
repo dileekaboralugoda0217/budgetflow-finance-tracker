@@ -1,0 +1,101 @@
+@import "tailwindcss";
+
+/* =========================
+   ROOT VARIABLES (LIGHT + DARK)
+========================= */
+:root {
+  --text: #6b6375;
+  --text-h: #08060d;
+  --bg: #0f172a; /* changed for dark modern UI */
+  --border: #1e293b;
+  --code-bg: #1f2937;
+  --accent: #aa3bff;
+  --accent-bg: rgba(170, 59, 255, 0.1);
+  --accent-border: rgba(170, 59, 255, 0.5);
+
+  --sans: system-ui, 'Segoe UI', Roboto, sans-serif;
+  --heading: system-ui, 'Segoe UI', Roboto, sans-serif;
+  --mono: ui-monospace, Consolas, monospace;
+
+  font-family: var(--sans);
+}
+
+/* =========================
+   DARK MODE OVERRIDE
+========================= */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --text: #cbd5e1;
+    --text-h: #f8fafc;
+    --bg: #0f172a;
+    --border: #1e293b;
+    --code-bg: #111827;
+    --accent: #c084fc;
+    --accent-bg: rgba(192, 132, 252, 0.15);
+    --accent-border: rgba(192, 132, 252, 0.5);
+  }
+}
+
+/* =========================
+   GLOBAL BODY STYLE
+========================= */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+/* =========================
+   ROOT APP CONTAINER
+========================= */
+#root {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  padding: 20px;
+}
+
+/* =========================
+   HEADINGS
+========================= */
+h1,
+h2 {
+  font-family: var(--heading);
+  font-weight: 600;
+  color: var(--text-h);
+}
+
+h1 {
+  font-size: 40px;
+  margin: 20px 0;
+}
+
+h2 {
+  font-size: 24px;
+  margin: 10px 0;
+}
+
+/* =========================
+   TEXT
+========================= */
+p {
+  margin: 0;
+  line-height: 1.6;
+}
+
+/* =========================
+   CODE BLOCKS
+========================= */
+code {
+  font-family: var(--mono);
+  background: var(--code-bg);
+  padding: 4px 8px;
+  border-radius: 6px;
+  color: var(--text-h);
+}
